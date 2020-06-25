@@ -1,0 +1,19 @@
+###
+seq diagram @notes page as SPA/form submit
+https://fullstack-exampleapp.herokuapp.com/spa
+###
+
+note over browser:
+@form submit
+browser execute form submit event handler that
+reads data from form and sends it to server
+as json using xhr
+end note
+
+browser->server: HTTP POST json string (eg. {}) to /new_note_spa
+server-->browser: json string {'message': 'created'}
+
+note over browser:
+browser stays on same page since 
+there's no redirect
+end note

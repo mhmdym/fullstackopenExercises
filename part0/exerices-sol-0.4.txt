@@ -1,0 +1,34 @@
+###
+seq diagram @notes page/form submit
+https://fullstack-exampleapp.herokuapp.com/notes
+###
+
+browser->server: HTTP POST form data(eg. 'note=hello+world') to URL /new_note
+server-->browser: redirect
+
+note over browser:
+browser reads the redirect destination
+from the response header *location*
+end note
+
+browser->server: HTTP GET /notes
+server-->browser: HTML code
+
+browser->server: HTTP GET /main.css
+server-->browser: main.css
+
+browser->server: HTTP GET /main.js
+server-->browser: main.js
+
+note over browser:
+browser execute js code that
+fetchs data from server using xhr
+end note
+
+browser->server: HTTP GET /data.json
+server-->browser: data.json
+
+note over browser:
+browser execute event handler that
+process fetched data and render notes
+end note

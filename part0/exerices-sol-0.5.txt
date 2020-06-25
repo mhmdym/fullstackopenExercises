@@ -1,0 +1,26 @@
+###
+seq diagram @notes page as SPA
+https://fullstack-exampleapp.herokuapp.com/spa
+###
+
+browser->server: HTTP GET /spa
+server-->browser: HTML code
+
+browser->server: HTTP GET /main.css
+server-->browser: main.css
+
+browser->server: HTTP GET /spa.js
+server-->browser: spa.js
+
+note over browser:
+browser execute js code that
+fetchs data from server using xhr
+end note
+
+browser->server: HTTP GET /data.json
+server-->browser: data.json
+
+note over browser:
+browser execute event handler that
+process fetched data and render notes
+end note
