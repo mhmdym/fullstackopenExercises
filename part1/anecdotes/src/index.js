@@ -19,11 +19,8 @@ const App = ({anecdotes}) => {
     new Array(anecdotes.length).fill(0)
   )
   
-  const genRandomIndex = () => (
-    setIndex(
-      Math.floor(Math.random() * anecdotes.length)
-    )
-  )
+  const genRandomIndex = () => setIndex(Math.floor(Math.random() * anecdotes.length))
+  
   const incrementVotes = () => {
     const updatedVotes = [...votes]
     updatedVotes[index] += 1
@@ -32,23 +29,27 @@ const App = ({anecdotes}) => {
   const maxVoteIndex = votes.indexOf(Math.max(...votes))
 
   return (
-    <>
+    <div>
       <h1>Anecdotes</h1>
-      <div id="output">
+      <div>
         <h2>Anecdote of the day</h2>
-        <p>{anecdotes[index]}</p>
-        <p>has {votes[index]} votes</p>
-      </div>
-      <div id="input">
-        <Button handler={incrementVotes} text="vote" />
-        <Button handler={genRandomIndex} text="next anecdote" />
+        <div id="output">
+          <p>{anecdotes[index]}</p>
+          <p>has {votes[index]} votes</p>
+        </div>
+        <div id="input">
+          <Button handler={incrementVotes} text="vote" />
+          <Button handler={genRandomIndex} text="next anecdote" />
+        </div>
       </div>
       <div>
         <h2>Anecdote with most votes</h2>
-        <p>{anecdotes[maxVoteIndex]}</p>
-        <p>has {votes[maxVoteIndex]} votes</p>
+        <div>
+          <p>{anecdotes[maxVoteIndex]}</p>
+          <p>has {votes[maxVoteIndex]} votes</p>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 

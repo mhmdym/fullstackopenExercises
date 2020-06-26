@@ -43,7 +43,7 @@ const App = () => {
   const incrementBad = () => setBad(bad+1)
 
   return (
-    <>
+    <div>
       <h1>Unicafe</h1>
       <div id="input">
         <h2>Give feedback</h2>
@@ -55,7 +55,7 @@ const App = () => {
         <h2>Statistics</h2>
         <Statistics good={good} neutral={neutral} bad={bad} />
       </div>
-    </>
+    </div>
   )
 }
 
